@@ -22,11 +22,13 @@ pipeline {
             steps { container('mycustomtf-sidecar') {
                 echo 'Hello World'
                 sh 'hostname'
+
+                dir('terraform') {
+                    sh "terraform init"
+                    sh "terraform plan"
+                }
                 
-                sh "terraform init"
-                sh "terraform plan"
-                sleep 60
-               
+              
             }
             
         
