@@ -9,7 +9,7 @@ pipeline {
 
             steps {
                 echo 'Hello World'
-                sleep 120
+                sleep 20
                
             }
         }
