@@ -1,0 +1,17 @@
+pipeline {
+    agent none
+
+    stages {
+        stage('Example') {
+            agent {
+                label 'mycustomtf'
+            }
+
+            steps {
+                echo 'Hello World'
+                sleep 20
+               
+            }
+        }
+    }
+}
