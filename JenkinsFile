@@ -3,9 +3,9 @@ pipeline {
 
     stages {
         stage('Example') {
-            agent {
-                label 'mycustomtf'
-            }
+            // agent {
+            //     label 'mycustomtf'
+            // }
 
             steps {
                 echo 'Hello World'
