@@ -10,11 +10,27 @@ pipeline {
             steps {
                 echo 'Hello World'
                 sh 'hostname'
-                sleep 60
-                sh "terraform init"
-                sh "terraform plan"
+               
                
             }
         }
+        stage('terraforminitstage') {
+            agent {
+                label 'mycustomtf'
+            }
+
+            steps { container('mycustomtf-sidecar') {
+                echo 'Hello World'
+                sh 'hostname'
+                
+                sh "terraform init"
+                sh "terraform plan"
+                sleep 60
+               
+            }
+            
+        
+        }
     }
+}
 }
