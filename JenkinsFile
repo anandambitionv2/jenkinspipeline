@@ -11,6 +11,8 @@ pipeline {
                 echo 'Hello World'
                 sh 'hostname'
                 sleep 60
+                sh "terraform init"
+                sh "terraform plan"
                
             }
         }
